@@ -1,0 +1,23 @@
+# Render.com Backend Service Configuration
+services:
+  - type: web
+    name: mern-task-backend  # This becomes your service name
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        value: your_mongodb_connection_string
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: https://your-frontend-app.vercel.app
+    healthCheckPath: /health
+    
+# Your API URL will be: https://mern-task-backend.onrender.com
+# So REACT_APP_API_BASE_URL = https://mern-task-backend.onrender.com/api

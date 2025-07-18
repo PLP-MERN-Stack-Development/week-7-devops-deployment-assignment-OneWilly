@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mern-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        fromDatabase:
+          name: mongodb-atlas
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: https://your-frontend-domain.vercel.app
+    healthCheckPath: /health
+
+databases:
+  - name: mongodb-atlas
+    databaseName: mern_production
+    user: api_user

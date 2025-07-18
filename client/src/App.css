@@ -1,0 +1,9 @@
+/* Basic global styles & spinner utility */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override for spinner sizes controlled via className */
+[class*="h-"][class*="animate-spin"] {
+  border-top-color: transparent;
+}
