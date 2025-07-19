@@ -20,7 +20,7 @@ A comprehensive guide for deploying a MERN (MongoDB, Express, React, Node.js) ap
 
 1. **Clone the repository**
    \`\`\`bash
-   git clone https://github.com/your-username/mern-deployment.git
+   git clone https://github.com/OneWilly/mern-deployment.git
    cd mern-deployment
    \`\`\`
 
